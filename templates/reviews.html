@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Enthusiasts - Reviews</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<div class="welcome-section">
+  <div class="container">
+    <h1>Welcome to Cool Tech Explorers!</h1>
+    <p>Explore the latest reviews and tech insights.</p>
+  </div>
+</div>
+
+<h1>Tech Reviews</h1>
+
+<form action="/reviews" method="post">
+    <input type="text" name="search_query" placeholder="Search by title...">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for review in reviews %}
+        <li><a href="{{ review.url }}">{{ review.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<footer>
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
